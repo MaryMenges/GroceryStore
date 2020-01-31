@@ -2,29 +2,36 @@ import java.util.Scanner;
 public class Project {
 
 	public static void main(String[] args) {
-		try (
-		Scanner in = new Scanner(System.in)) {
-			System.out.println("How much have you spent today?");
-			in.nextDouble();
-		}
-		
-		int amountSpent = 0;
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("How much have you spent today?");
+
+
+
+		double amountSpent = in.nextDouble();
+		double percentDiscount = 0;
 		if (amountSpent < 10) {
 			//NO DISCOUNT
 		} else if (amountSpent <= 60) {
-			 //0.08 DISCOUNT
+			percentDiscount = 0.08;
 		} else if (amountSpent <= 150) {
-			//0.1 DISCOUNT
+			percentDiscount = 0.1;
 		} else if (amountSpent <= 210) {
-			//0.12 DISCOUNT
+			percentDiscount = 0.12;
 		} else if (amountSpent >= 210.01) {
-			//0.14 DISCOUNT
-	
-			
-		 }
+			percentDiscount = 0.14;
 		}
-		
-			
-		
+		double moneyOff = amountSpent * percentDiscount;
+		System.out.printf("You win a discount coupon of $%.2f", moneyOff);
+		//System.out.println(amountSpent);
+		//System.out.println(percentDiscount);
+
+
+
+
 	}
+
+
+
+}
 
